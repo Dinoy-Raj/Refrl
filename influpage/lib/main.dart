@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 140,
+                height: 90,
                 width: 200,
 
                 decoration: BoxDecoration(
@@ -76,8 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left:20),
                       child: Container(
-                        height: 40,
-                        width: 40,
+                        height: 30,
+                        width: 30,
 
                         decoration: BoxDecoration(
 
@@ -94,16 +94,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     SizedBox(width: 20,),
                     Container(
-                      height: 100,
-                      width: 230,
+                      height: 80,
+                      width: 250,
 
                       decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.rectangle,
 
-                         border: Border.all(
-                           color: Colors.redAccent,
-                         ),
+
                           borderRadius: BorderRadius.circular(20),
 
                       ),
@@ -115,8 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.redAccent,
-                                  fontSize: 20,
-                                  letterSpacing: 2
+                                  fontSize: 17,
+                                  letterSpacing: 1
                               ),
                             ),
                           ),
@@ -127,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   letterSpacing: 1
                               ),
                             ),

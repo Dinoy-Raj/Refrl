@@ -61,9 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
       //background: Container(color: Colors.red,),
 
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(5.0),
                 child: Container(
-                  height: 140,
+                  height: 80,
                   width: 200,
 
                   decoration: BoxDecoration(
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow:[ BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.black.withOpacity(.1),
                         spreadRadius: 1,
                         blurRadius: 15,
                         offset: Offset(0,5),
@@ -93,10 +93,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left:20),
+                        padding: const EdgeInsets.only(left:14),
                         child: Container(
-                          height: 40,
-                          width: 40,
+                          height: 30,
+                          width: 30,
 
                           decoration: BoxDecoration(
 
@@ -111,46 +111,138 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(width: 14,),
                       Container(
-                        height: 100,
-                        width: 230,
+                        height: 60,
+                        width: 260,
 
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.rectangle,
 
                           border: Border.all(
-                            color: Colors.redAccent,
+                            color: Colors.redAccent.withOpacity(.8),
                           ),
                           borderRadius: BorderRadius.circular(20),
 
                         ),
-                        child: Column(
+                        child: Row(
                           children: [
-                            Padding(
-                              padding:EdgeInsets.only(top: 15,bottom: 10),
-                              child: Text("${names[index]}",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.redAccent,
-                                    fontSize: 20,
-                                    letterSpacing: 2
+                            SizedBox(width: 10,),
+                            
+                            Column(
+                              children: [
+                                Padding(
+                                  padding:EdgeInsets.only(top: 5,bottom: 5),
+                                  child: Text("${names[index]}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.redAccent.withOpacity(.8),
+                                        fontSize: 15,
+                                        letterSpacing: 2
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
 
-                            Padding(
-                              padding:EdgeInsets.only(top: 0,bottom: 10),
-                              child: Text("Number Of Referl:${referl[index]} ",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    letterSpacing: 1
+                                Padding(
+                                  padding:EdgeInsets.only(top: 0,bottom: 10),
+                                  child: Text("Number Of Referl:${referl[index]} ",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                        fontSize: 13,
+                                        letterSpacing: 0
+                                    ),
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
+                            
+                            SizedBox(width: 30,),
+                            
+                            IconButton(
+                             onPressed:(){
+                               setState(() {
+                                 names.removeAt(index);
+                                 Scaffold.of(context)
+                                     .showSnackBar(SnackBar(
+                                   backgroundColor: Colors.redAccent,
+
+                                     content: Text("$item Added To Influ",
+                                 style: TextStyle(
+                                   fontWeight: FontWeight.bold,
+                                   color: Colors.white,
+                                 ),
+                                     )
+                                 )
+                                 );
+                               });
+                             },
+                              icon:Icon(
+                                Icons.done_all_outlined
+                              ),
+                              //highlightColor: Colors.redAccent,
+                              color: Colors.green.withOpacity(.8),
+
+                                ),
+                            SizedBox(width: 0,),
+                            IconButton(
+                                icon:Icon(Icons.cancel_outlined) ,
+                                color: Colors.black.withOpacity(.7),
+                                onPressed:(){
+                                  showDialog(
+                                      context: context,
+                                      builder: (_) =>AlertDialog(
+
+                                        content: Padding(
+                                          padding: const EdgeInsets.only(left:8.0),
+                                          child: Text("Are You Sure ? Decline Request Of ${names[index]}!",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        elevation: 24,
+                                        actions: [
+                                          FlatButton(
+                                              onPressed: (){
+                                                setState(() {
+                                                  names.removeAt(index);
+                                                  Navigator.pop(context);
+                                                  Scaffold.of(context)
+                                                      .showSnackBar(SnackBar(content: Text("Request Of $item dismissed",
+                                                    style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.redAccent,
+                                                  ),)));
+
+                                                });
+                                              },
+                                              child: Text("Yes",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.redAccent,
+                                                ),
+                                              )
+                                          ),
+
+                                          FlatButton(
+                                              onPressed: (){
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text("No",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.redAccent,
+                                                ),
+                                              )
+                                          )
+                                        ],
+                                      )
+
+                                  );
+                                },
+                            )
                           ],
                         ),
                       ),
