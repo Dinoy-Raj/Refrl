@@ -38,6 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
+
+    String ownername ="Dinoy Raj K";
+    String owneremail ="dinoykraj@gmail.com";
+
+    String shopname = "CALISTO";
+    String location="Kollam";
+    String type = "Hotel";
+
     return Scaffold(
 
       appBar: AppBar(
@@ -168,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                            Padding(
                              padding: const EdgeInsets.all(20.0),
-                             child: Text("CALISTO",
+                             child: Text("$shopname",
                              style: TextStyle(
                              fontWeight: FontWeight.bold,
                              color: Colors.white,
@@ -195,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                              Padding(
                                padding: const EdgeInsets.only(left: 20),
-                               child: Text("Hotel",
+                               child: Text("$type",
                                style: TextStyle(
                                  color: Colors.white,
                                  fontWeight: FontWeight.bold,
@@ -217,7 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                              Padding(
                                padding: const EdgeInsets.only(left: 20),
-                               child: Text("Kollam",
+                               child: Text("$location",
                                  style: TextStyle(
                                    color: Colors.white,
                                    fontWeight: FontWeight.bold,
@@ -258,7 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      ),
                      Padding(
                        padding: const EdgeInsets.only(left:30 ),
-                       child: Text("Dinoy Raj K",
+                       child: Text("$ownername",
                          style: TextStyle(
                              fontWeight: FontWeight.bold
                          ),
@@ -279,7 +287,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      ),
                      Padding(
                        padding: const EdgeInsets.only(left:30 ),
-                       child: Text("dinoykraj@gmail.com",
+                       child: Text("$owneremail",
                        style: TextStyle(
                          fontWeight: FontWeight.bold
                        ),

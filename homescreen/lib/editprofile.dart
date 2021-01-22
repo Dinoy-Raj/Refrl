@@ -13,6 +13,13 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
+
+
+  final shopnamecontroler = TextEditingController();
+  final shopcatogorycontroler = TextEditingController();
+  final locationcontroler = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,6 +120,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Padding(
                 padding: EdgeInsets.only(bottom: 40),
                 child: TextField(
+                  controller: shopnamecontroler,
                   cursorColor: Colors.redAccent,
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(bottom: 3.0),
@@ -138,6 +146,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Padding(
                 padding: EdgeInsets.only(bottom: 40),
                 child: TextField(
+                  controller: shopcatogorycontroler,
                   cursorColor: Colors.redAccent,
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(bottom: 3.0),
@@ -163,6 +172,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Padding(
                 padding: EdgeInsets.only(bottom: 40),
                 child: TextField(
+                  controller: locationcontroler,
                   cursorColor: Colors.redAccent,
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(bottom: 3.0),
@@ -260,11 +270,35 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       onPressed: (){
                         showDialog(
                           context: context,
-                          builder: (_) =>Alertdialogsave(),
+                          builder: (context) {
+                            Future.delayed(Duration(seconds: 1),(){
+                             /* Navigator.push(context,
+                              MaterialPageRoute(builder:(context){
+                               return MyHomePage();
+                              }),
+                              );*/
+
+                              Navigator.pop(context);
+                              Navigator.pop(context);
+                            });
+                           return CupertinoAlertDialog(
+                              title: Text("Saving...",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  letterSpacing: 2,
+                                  color: Colors.redAccent,
+                                ),
+                              ),
+
+                            );
+                          }
+
 
                         );
                       },
                       child: Text("SAVE",
+                        //tooltip:"Save The Data You Entered",
                         style: TextStyle(
                           letterSpacing: 1.5,
                           fontWeight: FontWeight.bold,
@@ -289,16 +323,3 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
 
 
-CupertinoAlertDialog Alertdialogsave(){
-  return CupertinoAlertDialog(
-    title: Text("Saving...",
-      style:TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 15,
-        letterSpacing: 2,
-        color: Colors.redAccent,
-      ),
-    ),
-
-  );
-}
