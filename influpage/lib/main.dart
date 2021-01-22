@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  final List<String> names = <String>['Dinoy', 'Amal', 'Ajith','emil','jijo','lp','sangi','ami'];
+  final List<String> names = <String>['Dinoy Raj K', 'Amal Nath', 'Ajith Kumar Pm','Emil Joji','Jijo Johnson','Lekshmi priya','Sangeeth k','Amina'];
   final List<int> referl = <int>[600, 500, 100,20,29,47,58,37,37];
 
   @override
@@ -107,29 +108,61 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       child: Column(
                         children: [
+
+
                           Padding(
-                            padding:EdgeInsets.only(top: 15,bottom: 10),
+
+                            padding:EdgeInsets.only(top: 15,bottom: 15,left: 10),
+
                             child: Text("${names[index]}",
+                              textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.redAccent,
-                                  fontSize: 17,
+                                  fontSize: 18,
                                   letterSpacing: 1
                               ),
                             ),
                           ),
 
-                          Padding(
-                            padding:EdgeInsets.only(top: 0,bottom: 10),
-                            child: Text("Number Of Referl:${referl[index]} ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  letterSpacing: 1
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.local_offer_outlined,
+                                size: 12,
                               ),
-                            ),
-                          ),
+                              Padding(
+                                padding:EdgeInsets.only(top: 0,bottom: 0,left: 5,right: 10),
+                                child: Text("Referl: ${referl[index]} ",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black.withOpacity(.7),
+                                      fontSize: 14,
+                                      letterSpacing: 1
+                                  ),
+                                ),
+                              ),
+                              Icon(
+                                Icons.monetization_on_outlined,
+                                size: 12,
+                              ),
+                              Padding(
+                                padding:EdgeInsets.only(top: 0,bottom: 0,left: 5),
+                                child: Text("Payout: ${referl[index]} ",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black.withOpacity(.7),
+                                      fontSize: 14,
+                                      letterSpacing: 1
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),

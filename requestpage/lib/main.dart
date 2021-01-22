@@ -26,7 +26,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  final List<String> names = <String>['Dinoy', 'Amal', 'Ajith','emil','jijo','lp','sangi','ami'];
+  final List<String> names = <String>['Dinoy Raj K', 'Amal Nath', 'Ajith Kumar Pm','Emil Joji','Jijo Johnson','Lekshmi priya','Sangeeth k','Amina'];
   final List<int> referl = <int>[600, 500, 100,20,29,47,58,37,37];
 
   @override
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             image: DecorationImage(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/pro2.png"),
+                              image: AssetImage("assets/pro.jpg"),
                             ),
                           ),
                         ),
@@ -130,35 +130,41 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             SizedBox(width: 10,),
                             
-                            Column(
-                              children: [
-                                Padding(
-                                  padding:EdgeInsets.only(top: 5,bottom: 5),
-                                  child: Text("${names[index]}",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.redAccent.withOpacity(.8),
-                                        fontSize: 15,
-                                        letterSpacing: 2
+                            Container(
+                              width: 130,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding:EdgeInsets.only(left:10),
+                                    child: Text("${names[index]}",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.redAccent,
+                                          fontSize: 15,
+                                          letterSpacing: 1
+                                      ),
                                     ),
                                   ),
-                                ),
 
-                                Padding(
-                                  padding:EdgeInsets.only(top: 0,bottom: 10),
-                                  child: Text("Number Of Referl:${referl[index]} ",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black,
-                                        fontSize: 13,
-                                        letterSpacing: 0
+                                  /* Padding(
+                                    padding:EdgeInsets.only(top: 0,bottom: 10),
+                                    child: Text("Number Of Referl:${referl[index]} ",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontSize: 13,
+                                          letterSpacing: 0
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ],
+                                  ),*/
+                                ],
+                              ),
                             ),
                             
-                            SizedBox(width: 30,),
+                            SizedBox(width: 10,),
                             
                             IconButton(
                              onPressed:(){
